@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HillSagar • Hill Stations in India</title>
+  <meta name="description" content="Explore India's best hill stations — from the Himalayas to the Western Ghats. Photos, best season, quick facts, and travel inspiration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Reuse your main stylesheet/theme tokens -->
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    /* Page-specific tweaks layered on top of main.css */
+    .page-hero{background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('https://images.unsplash.com/photo-1517821099601-1a1c1c1a4e1d?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center;color:var(--white);text-align:center;padding:7rem 1rem;margin:1.5rem 0 3rem;border-radius:var(--border-radius);position:relative;overflow:hidden}
+    .page-hero h1{color:var(--white);font-size:2.6rem;margin-bottom:.75rem}
+    .page-hero p{max-width:800px;margin:0 auto;opacity:.95;font-size:1.15rem}
+
+    .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:0 0 2rem}
+    .filter-card{background:var(--card-bg);border:var(--border);border-radius:var(--border-radius);padding:1rem;box-shadow:var(--shadow);backdrop-filter:var(--backdrop);-webkit-backdrop-filter:var(--backdrop)}
+    .filter-card label{font-weight:700;margin-bottom:.5rem;display:block;color:var(--primary-color)}
+    .filter-card input,.filter-card select{width:100%;padding:.8rem;border-radius:12px;border:1px solid rgba(0,0,0,.08);background:transparent;color:var(--text-primary)}
+
+    .destination-grid.compact .destination-card{height:430px}
+    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;background:var(--gray-light);font-size:.85rem}
+    .chip i{opacity:.7}
+
+    .subtle{opacity:.9}
+    .back-to-top{position:fixed;right:18px;bottom:18px;border:none;border-radius:999px;padding:.9rem 1rem;background:var(--accent-color);color:var(--secondary-color);box-shadow:var(--shadow);cursor:pointer}
+    .back-to-top:hover{transform:translateY(-2px)}
+
+    /* badge for state */
+    .badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;padding:.35rem .6rem;border-radius:999px;font-size:.8rem}
+    .card-image{position:relative}
+
+    /* accessibility focus */
+    a:focus,button:focus,input:focus,select:focus{outline:3px solid var(--accent-color);outline-offset:2px}
+  </style>
+</head>
+<body>
+  <!-- Header (reuses your theme + nav) -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo-container">
+        <div class="logo">
+          <div class="logo-icon"><i class="fas fa-mountain"></i></div>
+          <div class="logo-text">
+            <img src="Final logo.png" alt="HillSagar Logo" class="logo-image" />
+            <p class="tagline">Where Mountains Meet the Sea</p>
+          </div>
+        </div>
+      </div>
+      <div class="nav-container">
+        <button class="theme-toggle" id="themeToggle" aria-pressed="false"><i class="fas fa-moon"></i><span>Dark Mode</span></button>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="#list">Hill Stations</a></li>
+            <li><a href="index.html#beaches">Beaches</a></li>
+            <li><a href="index.html#featured">Destinations</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="page-hero" aria-label="Hill stations hero">
+      <h1>India's Enchanting Hill Stations</h1>
+      <p>Curated picks across the Himalayas, Western & Eastern Ghats, the Deccan, and the North-East. Filter by state or season and start planning your next escape.</p>
+      <p class="subtle" style="margin-top:8px"><span class="chip"><i class="fa-solid fa-snowflake"></i> Best for Oct–Jun (most North)</span> <span class="chip"><i class="fa-solid fa-cloud-sun"></i> Sep–May (South/West)</span></p>
+    </section>
+
+    <section class="container" id="list" aria-labelledby="list-heading">
+      <div class="section-header">
+        <h2 id="list-heading">Top Hill Destinations (India Only)</h2>
+        <p>Search by name, and filter by state/season. Every card includes a quick rating and best time to visit.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters" role="region" aria-label="Filters">
+        <div class="filter-card">
+          <label for="search">Search place</label>
+          <input type="search" id="search" placeholder="e.g., Manali, Ooty, Auli…" aria-describedby="resultsCount" />
+        </div>
+        <div class="filter-card">
+          <label for="state">State/UT</label>
+          <select id="state">
+            <option value="">All</option>
+            <option>Himachal Pradesh</option>
+            <option>Uttarakhand</option>
+            <option>Jammu & Kashmir</option>
+            <option>Sikkim</option>
+            <option>Arunachal Pradesh</option>
+            <option>West Bengal</option>
+            <option>Meghalaya</option>
+            <option>Kerala</option>
+            <option>Tamil Nadu</option>
+            <option>Karnataka</option>
+            <option>Maharashtra</option>
+            <option>Gujarat</option>
+            <option>Madhya Pradesh</option>
+            <option>Andhra Pradesh</option>
+            <option>Rajasthan</option>
+          </select>
+        </div>
+        <div class="filter-card">
+          <label for="season">Best Season</label>
+          <select id="season">
+            <option value="">Any</option>
+            <option value="winter">Winter (Dec–Feb)</option>
+            <option value="summer">Summer (Mar–Jun)</option>
+            <option value="monsoon">Monsoon (Jul–Sep)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="destination-grid compact" id="cards" aria-live="polite"></div>
+
+      <p id="resultsCount" class="subtle" style="margin-top:1rem"></p>
+
+      <a href="#top" class="see-more" style="margin-top:2rem">Back to top <i class="fas fa-arrow-up"></i></a>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-header">
+          <h2>Hill Station FAQ</h2>
+          <p>Quick answers to help you decide when and where to go.</p>
+        </div>
+        <div class="destination-grid">
+          <article class="testimonial" style="min-height:auto">
+            <h3 style="margin-bottom:.6rem;color:var(--accent-color)"><i class="fa-solid fa-cloud-sun"></i> What is the best time to visit?</h3>
+            <p>For the Himalayas (HP, UK, J&K, Sikkim, Arunachal) — Oct to Jun is pleasant; Dec–Feb for snow. For Western/Eastern Ghats (Kerala, TN, KA, MH) — Sep to May is ideal; monsoon is lush but brings heavier showers and occasional closures.</p>
+          </article>
+          <article class="testimonial" style="min-height:auto">
+            <h3 style="margin-bottom:.6rem;color:var(--accent-color)"><i class="fa-solid fa-road"></i> How do I get around?</h3>
+            <p>Nearest airports connect to major hubs, with scenic road transfers. Some have toy trains (e.g., Darjeeling, Ooty). Always check local advisories during snow or heavy rain.</p>
+          </article>
+          <article class="testimonial" style="min-height:auto">
+            <h3 style="margin-bottom:.6rem;color:var(--accent-color)"><i class="fa-solid fa-camera"></i> Any photography tips?</h3>
+            <p>Golden hour (sunrise & sunset) enhances valleys and tea gardens. Carry a microfiber cloth (mist), ND filter for waterfalls, and a rain cover in monsoon.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (lightweight) -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About HillSagar</h3>
+          <p>Discover India's most beautiful hill stations with curated tips and season-wise suggestions.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <p><a href="index.html#hills">Home • Hills</a></p>
+          <p><a href="index.html#beaches">Home • Beaches</a></p>
+          <p><a href="#faq">FAQ</a></p>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> info@hillsagar.com</p>
+          <p><i class="fas fa-phone"></i> +91 9876543210</p>
+          <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Travel Blog</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 HillSagar. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="toTop" aria-label="Back to top" title="Back to top" style="display:none"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script>
+    // Theme toggle (persists in localStorage)
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('hs-theme');
+    if(savedTheme === 'dark'){ document.body.classList.add('dark-theme'); themeToggle.setAttribute('aria-pressed','true'); themeToggle.querySelector('span').textContent='Light Mode'; themeToggle.querySelector('i').classList.replace('fa-moon','fa-sun'); }
+    themeToggle?.addEventListener('click',()=>{
+      const isDark = document.body.classList.toggle('dark-theme');
+      localStorage.setItem('hs-theme', isDark ? 'dark' : 'light');
+      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      themeToggle.querySelector('span').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      themeToggle.querySelector('i').classList.toggle('fa-sun');
+      themeToggle.querySelector('i').classList.toggle('fa-moon');
+    });
+
+    // Data: Indian hill stations only
+    const HILLS = [
+      {name:'Shimla', state:'Himachal Pradesh', rating:4.8, season:['summer','winter'], best:'Oct–Jun', img:'https://images.unsplash.com/photo-1563714193012-6c91c12df672?q=80&w=1200&auto=format&fit=crop', blurb:'Colonial avenues, pine forests, and Himalayan views.'},
+      {name:'Manali', state:'Himachal Pradesh', rating:4.6, season:['summer','winter'], best:'Oct–Jun', img:'https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=1200&auto=format&fit=crop', blurb:'Adventure hub with snow peaks and river valleys.'},
+      {name:'Dalhousie', state:'Himachal Pradesh', rating:4.5, season:['summer','winter'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1580894894513-cf3a0c2a6a5f?q=80&w=1200&auto=format&fit=crop', blurb:'Cedar forests, colonial charm, and Khajjiar meadows.'},
+      {name:'Dharamshala & McLeod Ganj', state:'Himachal Pradesh', rating:4.7, season:['summer'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1552825894-593b0f936de1?q=80&w=1200&auto=format&fit=crop', blurb:'Monasteries, tea gardens, and the Dhauladhar range.'},
+
+      {name:'Mussoorie', state:'Uttarakhand', rating:4.6, season:['summer'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1582521769431-8e22e97ece1a?q=80&w=1200&auto=format&fit=crop', blurb:'Queen of the Hills with misty promenades.'},
+      {name:'Nainital', state:'Uttarakhand', rating:4.6, season:['summer','winter'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1601297611207-1a9b7358122f?q=80&w=1200&auto=format&fit=crop', blurb:'Emerald lake town ringed by hills and trails.'},
+      {name:'Auli', state:'Uttarakhand', rating:4.7, season:['winter'], best:'Dec–Mar', img:'https://images.unsplash.com/photo-1578946956088-940c3b00f911?q=80&w=1200&auto=format&fit=crop', blurb:'India’s premier ski slopes with Nanda Devi views.'},
+      {name:'Ranikhet', state:'Uttarakhand', rating:4.4, season:['summer'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop', blurb:'Quiet cantonment town with orchards and meadows.'},
+
+      {name:'Gulmarg', state:'Jammu & Kashmir', rating:4.9, season:['winter','summer'], best:'Dec–Mar (snow), May–Sep', img:'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop', blurb:'Ski resort town with high-altitude meadows.'},
+      {name:'Pahalgam', state:'Jammu & Kashmir', rating:4.7, season:['summer'], best:'May–Sep', img:'https://images.unsplash.com/photo-1592281094042-a50e54d55f20?q=80&w=1200&auto=format&fit=crop', blurb:'Lidder Valley vistas and alpine trails.'},
+      {name:'Sonamarg', state:'Jammu & Kashmir', rating:4.6, season:['summer'], best:'May–Sep', img:'https://images.unsplash.com/photo-1573295040108-72b1b17c936a?q=80&w=1200&auto=format&fit=crop', blurb:'“Meadow of Gold” with glaciers and rivers.'},
+
+      {name:'Gangtok', state:'Sikkim', rating:4.7, season:['summer'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1595313765100-6d7a2a55f459?q=80&w=1200&auto=format&fit=crop', blurb:'Monasteries, MG Marg, and Kanchenjunga views.'},
+      {name:'Pelling', state:'Sikkim', rating:4.6, season:['summer'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1548438294-1ad5d5a6a0fd?q=80&w=1200&auto=format&fit=crop', blurb:'Skywalks, waterfalls, and snow peaks.'},
+
+      {name:'Tawang', state:'Arunachal Pradesh', rating:4.8, season:['summer'], best:'Apr–Jun, Sep–Oct', img:'https://images.unsplash.com/photo-1600742240949-6f4f3e1edc68?q=80&w=1200&auto=format&fit=crop', blurb:'Ancient monastery, high passes, and lakes.'},
+      {name:'Ziro Valley', state:'Arunachal Pradesh', rating:4.5, season:['summer','monsoon'], best:'Mar–May, Sep–Nov', img:'https://images.unsplash.com/photo-1593696954577-ab3d086a2d0a?q=80&w=1200&auto=format&fit=crop', blurb:'Rice terraces, pine hills, and Apatani culture.'},
+
+      {name:'Darjeeling', state:'West Bengal', rating:4.7, season:['summer'], best:'Feb–Mar, Sep–Dec', img:'https://images.unsplash.com/photo-1580135390424-701bd6cce890?q=80&w=1200&auto=format&fit=crop', blurb:'Tea gardens and the Himalayan toy train.'},
+      {name:'Kalimpong', state:'West Bengal', rating:4.4, season:['summer'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1585913336005-6ac612382064?q=80&w=1200&auto=format&fit=crop', blurb:'Quiet town with orchids and viewpoints.'},
+
+      {name:'Shillong', state:'Meghalaya', rating:4.6, season:['summer','monsoon'], best:'Mar–Jun, Sep–Nov', img:'https://images.unsplash.com/photo-1608530201213-2b2d60ab2a58?q=80&w=1200&auto=format&fit=crop', blurb:'Scotland of the East — lakes and waterfalls.'},
+      {name:'Cherrapunji (Sohra)', state:'Meghalaya', rating:4.6, season:['monsoon','summer'], best:'Oct–May (for treks), Jun–Sep (for waterfalls)', img:'https://images.unsplash.com/photo-1566252680404-cb1723a2e3fd?q=80&w=1200&auto=format&fit=crop', blurb:'Living root bridges and misty canyons.'},
+
+      {name:'Munnar', state:'Kerala', rating:4.6, season:['summer','monsoon'], best:'Sep–May', img:'https://images.unsplash.com/photo-1588416499018-d8c621b1b3cf?q=80&w=1200&auto=format&fit=crop', blurb:'Tea carpets, Eravikulam, and rolling mist.'},
+      {name:'Wayanad', state:'Kerala', rating:4.5, season:['summer','monsoon'], best:'Oct–May', img:'https://images.unsplash.com/photo-1600359756866-0be664aa5c2e?q=80&w=1200&auto=format&fit=crop', blurb:'Forests, waterfalls, and wildlife sanctuaries.'},
+
+      {name:'Ooty (Udhagamandalam)', state:'Tamil Nadu', rating:4.7, season:['summer'], best:'Oct–Jun', img:'https://images.unsplash.com/photo-1594736797933-d0401ba94653?q=80&w=1200&auto=format&fit=crop', blurb:'Nilgiri toy train, gardens, and lakes.'},
+      {name:'Kodaikanal', state:'Tamil Nadu', rating:4.6, season:['summer','monsoon'], best:'Oct–Jun', img:'https://images.unsplash.com/photo-1551710484-4483a8cb0b3a?q=80&w=1200&auto=format&fit=crop', blurb:'Coaker’s Walk, lakes, and shola forests.'},
+      {name:'Yercaud', state:'Tamil Nadu', rating:4.4, season:['summer'], best:'Oct–Jun', img:'https://images.unsplash.com/photo-1580584126903-c17dab3041e7?q=80&w=1200&auto=format&fit=crop', blurb:'Shevaroy hills, coffee estates, and viewpoints.'},
+
+      {name:'Coorg (Kodagu)', state:'Karnataka', rating:4.6, season:['summer','monsoon'], best:'Oct–May', img:'https://images.unsplash.com/photo-1593696954577-ab3d086a2d0a?q=80&w=1200&auto=format&fit=crop', blurb:'Coffee country, waterfalls, and homestays.'},
+      {name:'Chikmagalur', state:'Karnataka', rating:4.5, season:['summer','monsoon'], best:'Oct–May', img:'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1200&auto=format&fit=crop', blurb:'Mullayanagiri treks and coffee estates.'},
+
+      {name:'Mahabaleshwar', state:'Maharashtra', rating:4.5, season:['summer','monsoon'], best:'Oct–May', img:'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop', blurb:'Strawberries, tableland, and viewpoints.'},
+      {name:'Panchgani', state:'Maharashtra', rating:4.4, season:['summer','monsoon'], best:'Oct–May', img:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop', blurb:'Scenic plateaus and quiet stays.'},
+      {name:'Lonavala & Khandala', state:'Maharashtra', rating:4.4, season:['monsoon','summer'], best:'Jul–Sep (green), Oct–Mar', img:'https://images.unsplash.com/photo-1477586974278-3aa0f10a1d84?q=80&w=1200&auto=format&fit=crop', blurb:'Caves, forts, and monsoon mist.'},
+
+      {name:'Saputara', state:'Gujarat', rating:4.3, season:['summer','monsoon'], best:'Jul–Mar', img:'https://images.unsplash.com/photo-1599192751514-05ce5f76b968?q=80&w=1200&auto=format&fit=crop', blurb:'Gujarat’s lone hill station with lakes and ropeway.'},
+      {name:'Mount Abu', state:'Rajasthan', rating:4.4, season:['summer'], best:'Oct–Mar', img:'https://images.unsplash.com/photo-1623056565623-7e6252a9d9a3?q=80&w=1200&auto=format&fit=crop', blurb:'Aravalli retreat with Dilwara temples.'},
+
+      {name:'Pachmarhi', state:'Madhya Pradesh', rating:4.4, season:['summer','monsoon'], best:'Oct–Jun', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', blurb:'Satpura hill station with caves and falls.'},
+
+      {name:'Araku Valley', state:'Andhra Pradesh', rating:4.3, season:['winter','summer'], best:'Oct–Mar', img:'https://images.unsplash.com/photo-1548786811-ff04ae10b607?q=80&w=1200&auto=format&fit=crop', blurb:'Eastern Ghats coffee slopes and viewpoints.'}
+    ];
+
+    const grid = document.getElementById('cards');
+    const search = document.getElementById('search');
+    const stateSel = document.getElementById('state');
+    const seasonSel = document.getElementById('season');
+    const results = document.getElementById('resultsCount');
+
+    function seasonMatch(card){
+      const val = seasonSel.value;
+      if(!val) return true;
+      return card.season.includes(val);
+    }
+
+    function render(){
+      const q = (search.value||'').toLowerCase().trim();
+      const st = stateSel.value;
+      let list = HILLS.filter(h => (!q || h.name.toLowerCase().includes(q)) && (!st || h.state===st) && seasonMatch(h));
+      grid.innerHTML = list.map(h => `
+        <article class="destination-card" data-name="${h.name}" data-state="${h.state}" data-season="${h.season.join(',')}">
+          <div class="card-image">
+            <span class="badge">${h.state}</span>
+            <img loading="lazy" src="${h.img}" alt="${h.name} hill station in ${h.state}" />
+          </div>
+          <div class="card-content">
+            <div>
+              <h3>${h.name}</h3>
+              <p>${h.blurb}</p>
+            </div>
+            <div class="card-meta">
+              <span class="rating">★ ${h.rating.toFixed(1)}</span>
+              <span>Best: ${h.best}</span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+      results.textContent = `${list.length} destination${list.length===1?'':'s'} shown`;
+    }
+
+    [search, stateSel, seasonSel].forEach(el => el.addEventListener('input', render));
+    render();
+
+    // Back to top button
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', ()=>{
+      toTop.style.display = window.scrollY > 600 ? 'block' : 'none';
+    });
+    toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  </script>
+</body>
+</html>

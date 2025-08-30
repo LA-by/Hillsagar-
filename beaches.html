@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Beach Paradise - 12 Stunning Destinations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+            color: #025E73;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0388A6;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #F2B705;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #025E73;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #F2B705;
+        }
+        
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1520250497590-447c22dd2cd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #F2B705;
+            color: #025E73;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #F2C84B;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #025E73;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #F2B705;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .beaches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .beach-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .beach-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .beach-img {
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .beach-content {
+            padding: 20px;
+        }
+        
+        .beach-content h3 {
+            color: #0388A6;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .beach-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .beach-location {
+            display: flex;
+            align-items: center;
+            color: #F2B705;
+            font-weight: 500;
+        }
+        
+        .beach-location i {
+            margin-right: 5px;
+        }
+        
+        .activities {
+            background: #E0F7FA;
+            padding: 60px 0;
+        }
+        
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .activity {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .activity:hover {
+            transform: translateY(-5px);
+        }
+        
+        .activity i {
+            font-size: 40px;
+            color: #F2B705;
+            margin-bottom: 15px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        .testimonials {
+            background: linear-gradient(to right, #025E73, #0388A6);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .testimonial img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #F2B705;
+        }
+        
+        .testimonial .quote {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial .name {
+            font-weight: bold;
+            color: #F2B705;
+        }
+        
+        .map-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            height: 400px;
+            background: #E0F7FA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #87CEEB, #E0F7FA);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #025E73;
+        }
+        
+        .map-placeholder i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #F2B705;
+        }
+        
+        footer {
+            background: #025E73;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #F2B705;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-umbrella-beach"></i>
+                <span>Indian Beach Paradise</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Beaches</a></li>
+                <li><a href="#">Activities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover India's Beautiful Beaches</h1>
+            <p>Experience the stunning coastline of India with its golden sands and crystal clear waters</p>
+            <a href="#" class="btn">Explore Beaches</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">12 Popular Indian Beaches</h2>
+        <div class="beaches">
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1598522325072-2d4c6e5c803d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Radhanagar Beach</h3>
+                    <p>Often rated among Asia's best beaches, located in Havelock Island, Andaman and Nicobar Islands.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Andaman and Nicobar Islands</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1580674695196-2151e477c939?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Palolem Beach</h3>
+                    <p>A serene crescent-shaped beach in South Goa known for its calm waters and stunning sunsets.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Goa</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1597145129288-0d087a2aa50e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Kovalam Beach</h3>
+                    <p>Famous for its lighthouse and crescent-shaped coastline, located in Kerala.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kerala</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1602006529486-7446ba6a1382?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Varkala Beach</h3>
+                    <p>Unique cliff-beach combination with mineral springs and stunning views in Kerala.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kerala</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Agonda Beach</h3>
+                    <p>A quiet, pristine beach in South Goa perfect for relaxation and turtle spotting.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Goa</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1581338834647-b0fb40704e21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Marina Beach</h3>
+                    <p>One of the longest urban beaches in the world, located in Chennai, Tamil Nadu.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tamil Nadu</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Tarkarli Beach</h3>
+                    <p>Famous for its clear emerald waters and water sports activities in Maharashtra.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Maharashtra</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1574879988114-5c0e2ab4c7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Puri Beach</h3>
+                    <p>A sacred beach in Odisha known for its religious significance and beautiful sunrises.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Odisha</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1599837565318-67429bdde5c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Dhanushkodi Beach</h3>
+                    <p>A ghost town beach at the southern tip of India where two oceans meet in Tamil Nadu.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tamil Nadu</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Baga Beach</h3>
+                    <p>One of Goa's most popular beaches known for its vibrant nightlife and water sports.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Goa</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1516608448345-c72334c8d95e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Kanyakumari Beach</h3>
+                    <p>Where the Arabian Sea, Bay of Bengal, and Indian Ocean meet at India's southernmost point.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tamil Nadu</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <div class="beach-img" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                <div class="beach-content">
+                    <h3>Gokarna Beach</h3>
+                    <p>A blend of spiritual serenity and beach paradise in Karnataka with several beautiful beaches.</p>
+                    <div class="beach-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Karnataka</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="activities">
+        <div class="container">
+            <h2 class="section-title">Beach Activities</h2>
+            <div class="activity-grid">
+                <div class="activity">
+                    <i class="fas fa-swimmer"></i>
+                    <h3>Swimming</h3>
+                    <p>Enjoy the calm, clear waters perfect for a refreshing swim.</p>
+                </div>
+                
+                <div class="activity">
+                    <i class="fas fa-fish"></i>
+                    <h3>Snorkeling</h3>
+                    <p>Discover the vibrant underwater world and marine life.</p>
+                </div>
+                
+                <div class="activity">
+                    <i class="fas fa-sun"></i>
+                    <h3>Sunbathing</h3>
+                    <p>Relax on the warm sand and work on your perfect tan.</p>
+                </div>
+                
+                <div class="activity">
+                    <i class="fas fa-water"></i>
+                    <h3>Surfing</h3>
+                    <p>Catch the perfect wave at India's best surfing destinations.</p>
+                </div>
+                
+                <div class="activity">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Beachside Dining</h3>
+                    <p>Enjoy fresh seafood and local cuisine with ocean views.</p>
+                </div>
+                
+                <div class="activity">
+                    <i class="fas fa-hiking"></i>
+                    <h3>Beach Trekking</h3>
+                    <p>Explore coastal trails and discover hidden coves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Indian Beach Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1535014934577-3c0f4a54333d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Beach view">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1516608448345-c72334c8d95e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Palm trees">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1597145129288-0d087a2aa50e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Beach chairs">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1602006529486-7446ba6a1382?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Ocean view">
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Beach Destinations Map</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Interactive Map of Indian Beaches</h3>
+                    <p>Explore all 12 beach destinations across India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Visitors Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Visitor">
+                    <p class="quote">"The beaches of Goa exceeded all my expectations. The golden sands and vibrant culture made for an unforgettable vacation."</p>
+                    <p class="name">- Priya Sharma, Mumbai</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Visitor">
+                    <p class="quote">"Andaman's Radhanagar Beach is truly paradise on earth. The crystal clear waters are perfect for snorkeling."</p>
+                    <p class="name">- Raj Patel, London</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Visitor">
+                    <p class="quote">"Kovalam Beach in Kerala offered the perfect blend of relaxation and adventure. The lighthouse view was spectacular!"</p>
+                    <p class="name">- Sarah Johnson, Australia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+        <p>&copy; 2023 Indian Beach Paradise. All rights reserved.</p>
+    </footer>
+</body>
+</html>

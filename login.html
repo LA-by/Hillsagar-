@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+  <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Welcome</h2>
+    
+    <div id="errorMsg"></div>
+
+    <form id="loginForm">
+      <div class="input-box">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-box">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <div class="show-password">
+          <input type="checkbox" id="showPass" />
+          <label for="showPass">Show Password</label>
+        </div>
+      </div>
+
+      <div class="input-box">
+        <input type="submit" value="LOGIN">
+      </div>
+
+      <div class="links">
+        <a href="#">Forgot Password?</a>
+        <a href="register.html">Sign up</a>
+      </div>
+
+      <p class="or">OR LOGIN WITH</p>
+      <div class="social-login">
+        <a href="#"><img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Login"/></a>
+        <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook Login"/></a>
+      </div>
+    </form>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
